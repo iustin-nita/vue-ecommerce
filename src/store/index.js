@@ -3,6 +3,9 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+// Import getters
+import { productGetters, manufacturerGetters } from './getters';
+
 export default new Vuex.Store({
   strict: true,
   state: {
@@ -16,5 +19,7 @@ export default new Vuex.Store({
     products: [],
     // all manufacturers
     manufacturers: []
-  }
+  },
+  // GETTERS
+  getters: Object.assign({}, productGetters, manufacturerGetters)
 });
