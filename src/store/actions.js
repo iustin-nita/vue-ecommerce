@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_BASE = '<API-URL/api/vi>';
+const API_BASE = 'http://localhost:3001/api/v1>';
 
 import {
   ADD_PRODUCT,
@@ -35,6 +35,7 @@ export const productActions = {
     commit(ADD_PRODUCT);
     // Create a new product via API
     axios.post(`${API_BASE}/products`, payload).then(response => {
+      console.log(response);
       commit(ADD_PRODUCT_SUCCESS, response.data);
     })
   },

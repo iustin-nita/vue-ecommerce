@@ -51,10 +51,12 @@ export const productMutations = {
     state.showLoader = false
     state.products = state.products.map(p => {
       if (p._id === payload._id) {
-        payload = {...payload, manufacturer: state.manufacturers.filter(x => x._id === payload.manufacturer)[0]}
-        return payload
+        let updatedPayload = {...payload,
+          manufacturer: state.manufacturers.filter(x => x._id === payload.manufacturer)[0]
+        };
+        return updatedPayload;
       }
-      return p
+      return p;
     })
   },
   [REMOVE_PRODUCT]: (state, payload) => {
@@ -82,7 +84,7 @@ export const manufacturerMutations = {
     state.showLoader = true
   },
   [ALL_MANUFACTURERS_SUCCESS] (state, payload) {
-    state.showLoader = false
+    state.showLoader = false;
     state.manufacturers = payload
   }
 };

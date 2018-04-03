@@ -12,7 +12,7 @@
       <div class="form-group">
         <label>Manufacturer</label>
         <select type="text" class="form-control" v-model="model.manufacturer" name="manufacturer">
-          <template v-for="manufacturer in manufacturers">
+          <template v-for="manufacturer in model.manufacturers">
             <option :value="manufacturer._id" v-bind:key="manufacturer._id"
                     :selected="manufacturer._id == (model.manufacturer && model.manufacturer._id)">
               {{manufacturer.name}}

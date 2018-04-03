@@ -51,6 +51,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
-app.use('/api/v1', api)
+app.use('/api/v1', api);
+
 
 module.exports = app;
+app.listen(3001, () => {
+  console.log('App Successful listening on port 3001');
+});
