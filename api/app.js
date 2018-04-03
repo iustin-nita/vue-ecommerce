@@ -10,13 +10,18 @@ const mongoose = require('mongoose');
 var index = require('./routes/index');
 const api = require('./routes/api/index');
 
+const DB_USER = 'root';
+const DB_PASSWORD = 'root';
+const DB_URL = 'ds131989.mlab.com:31989/vue-ecommerce';
+
 // Setup an express app
 var app = express();
 // **************************
 
 // Database connection here
-mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_URL}`);
-
+mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_URL}`);
+// mongoose.connect('mongodb://localhost:27017/mydboverhere');
+var db = mongoose.connection;
 // ********************
 
 // **************************
@@ -46,7 +51,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/api/v1', api)
 
 module.exports = app;

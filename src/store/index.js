@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 // Import getters
 import { productGetters, manufacturerGetters } from './getters';
+import { productMutations, manufacturerMutations, cartMutations } from './mutations';
 
 export default new Vuex.Store({
   strict: true,
