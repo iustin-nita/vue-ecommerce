@@ -1,6 +1,5 @@
 import axios from 'axios';
-const API_BASE = 'http://localhost:3001/api/v1>';
-
+import {API_BASE} from "../config";
 import {
   ADD_PRODUCT,
   ADD_PRODUCT_SUCCESS,
