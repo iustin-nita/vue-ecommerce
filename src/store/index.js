@@ -21,5 +21,6 @@ export default new Vuex.Store({
     manufacturers: []
   },
   // GETTERS
-  getters: Object.assign({}, productGetters, manufacturerGetters)
+  getters: Object.assign({}, productGetters, manufacturerGetters),
+  mutations: Object.assign({}, productMutations, cartMutations, manufacturerMutations),
 });
