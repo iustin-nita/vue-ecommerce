@@ -1,7 +1,20 @@
 <template>
-  <div>
-    <div class="title">
-      <h1>This is Admin</h1>
-    </div>
-  </div>
+  <product-list :products="products"></product-list>
 </template>
+
+<script>
+  import ProductList from '../../components/products/ProductList.vue'
+  export default {
+    created () {
+      this.$store.dispatch('allProducts')
+    },
+    computed: {
+      products () {
+        return this.$store.getters.allProducts;
+      }
+    },
+    components: {
+      'product-list': ProductList
+    }
+  }
+</script>
