@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 
 // Require routes
 // They are yet to be created
-var index = require('./routes/index');
 const api = require('./routes/api/index');
 
 const DB_USER = 'root';
@@ -22,6 +21,7 @@ var app = express();
 mongoose.connect(`mongodb://${DB_USER}:${DB_PASSWORD}@${DB_URL}`);
 // mongoose.connect('mongodb://localhost:27017/mydboverhere');
 var db = mongoose.connection;
+console.log("Database connection ready");
 // ********************
 
 // **************************
@@ -41,20 +41,26 @@ app.all('/*', function(req, res, next) {
 
 // ********************
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
 // Configure middlewares
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', index);
+// Create link to Angular build directory
+var distDir = __dirname + "/../dist/";
+console.log(distDir);
+app.use(express.static(distDir));
+
 app.use('/api/v1', api);
 
+// Initialize the app.
+var server = app.listen(process.env.PORT || 3001, function () {
+  var port = server.address().port;
+  console.log("App now running on port", port);
+});
 
 module.exports = app;
-app.listen(3001, () => {
-  console.log('App Successful listening on port 3001');
-});
