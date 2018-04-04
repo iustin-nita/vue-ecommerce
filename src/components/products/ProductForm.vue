@@ -35,7 +35,7 @@
           name="manufacturer"
           :class="{'form-control': true, 'error': errors.has('manufacturer') }">
           <template v-for="manufacturer in manufacturers">
-            <option :value="manufacturer._id" v-bind:key="manufacturer._id"
+            <option :value="manufacturer" v-bind:key="manufacturer._id"
                     :selected="manufacturer._id == (model.manufacturer && model.manufacturer._id)">
               {{manufacturer.name}}
             </option>
