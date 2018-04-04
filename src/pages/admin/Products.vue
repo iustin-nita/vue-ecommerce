@@ -10,7 +10,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="product in products">
+      <tr v-for="product in products" v-bind:key="product._id">
         <td>{{product.name}}</td>
         <td>${{product.price}}</td>
         <td>{{product.manufacturer.name}}</td>
