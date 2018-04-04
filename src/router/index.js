@@ -25,6 +25,11 @@ export default new Router({
       component: Cart
     },
     {
+      path: '/details/:id',
+      name: 'Details',
+      component: Details
+    },
+    {
       path: '/admin',
       name: 'Admin',
 
