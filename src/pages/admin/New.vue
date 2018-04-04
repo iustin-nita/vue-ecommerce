@@ -1,18 +1,17 @@
 <template>
-  <product-form @save-product="addProduct" :model="model" :manufacturers="manufacturers">
-  </product-form>
+  <product-form @save-product="addProduct" :model="model" :manufacturers="manufacturers"></product-form>
 </template>
 
 <script>
-  import ProductForm from '@/components/products/ProductForm.vue';
+  import ProductForm from '../../components/products/ProductForm.vue'
   export default {
     data () {
       return {
-        model: {},
+        model: {}
       }
     },
     created () {
-      this.$store.dispatch('allManufacturers');
+      this.$store.dispatch('allManufacturers')
     },
     computed: {
       manufacturers () {
@@ -22,7 +21,7 @@
     methods: {
       addProduct (model) {
         console.log('model', model);
-        this.$store.dispatch('addProduct', model);
+        this.$store.dispatch('addProduct', model)
       }
     },
     components: {
