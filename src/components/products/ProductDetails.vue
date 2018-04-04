@@ -1,12 +1,10 @@
 <template>
   <div class="product-details">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-details__image">
+      <div class="row pt-5">
+        <div class="col-lg-7 col-md-8 col-sm-10 col-xs-12 mx-auto product-details__image">
           <img
-            class="img-responsive" :src="product.image" alt="">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 product-details__info">
+            class="img-fluid" :src="product.image" alt="">
           <div class="product-details__description">
             <small>{{product.manufacturer && product.manufacturer.name}}</small>
             <h3>{{product.name}}</h3>

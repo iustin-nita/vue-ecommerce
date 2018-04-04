@@ -29,8 +29,9 @@
     },
     methods: {
       updateProduct (model) {
-        console.log('model', model)
-        this.$store.dispatch('updateProduct', model)
+        console.log('model', model);
+        this.$store.dispatch('updateProduct', model);
+        this.$router.push({name: 'Admin'});
       }
     },
     components: {
