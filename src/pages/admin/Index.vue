@@ -9,7 +9,9 @@
               <li><router-link to="/admin/new">New Product</router-link></li>
             </ul>
           </div>
-          <router-view></router-view>
+          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <router-view></router-view>
+          </div>
         </div>
       </div>
     </div>
