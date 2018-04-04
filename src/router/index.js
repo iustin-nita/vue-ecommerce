@@ -3,6 +3,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from '@/pages/Home';
+import Details from '@/pages/Details';
 import Cart from '@/pages/Cart';
 
 // Admin Components
