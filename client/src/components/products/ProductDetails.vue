@@ -1,10 +1,10 @@
 <template>
-  <div class="product-details">
+  <div class="product-details text-center">
     <div class="container">
       <div class="row pt-5">
         <div class="col-lg-7 col-md-8 col-sm-10 col-xs-12 mx-auto product-details__image">
           <img
-            class="img-fluid" :src="product.image" alt="">
+            class="img-fluid product-image" :src="product.image" alt="">
           <div class="product-details__description">
             <small>{{product.manufacturer && product.manufacturer.name}}</small>
             <h3>{{product.name}}</h3>
@@ -31,3 +31,10 @@
     }
   }
 </script>
+
+<style scoped>
+  .product-image {
+    max-height: 300px;
+  }
+</style>
+

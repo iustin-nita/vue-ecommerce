@@ -1,5 +1,5 @@
 <template>
-  <div v-if="cart.length > 0">
+  <div v-if="cart.length > 0" class="pb-5">
     <div class="title">
       <h1><i class="fa fa-superpowers"></i> Your Cart</h1>
     </div>
