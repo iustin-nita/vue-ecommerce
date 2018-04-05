@@ -1,10 +1,10 @@
 <template>
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="product">
+    <div class="product text-center">
       <router-link :to="'/details/'+product._id" class="product-link">
         <div class="product__image">
           <img
-            class="img-fluid" :src="product.image" alt="">
+            class="img-fluid product-image" :src="product.image" alt="">
         </div>
         <div class="product__description">
           <div class="product__info">
@@ -33,3 +33,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .product-image {
+    max-height: 100px;
+  }
+</style>

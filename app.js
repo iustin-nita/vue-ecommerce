@@ -51,16 +51,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Create link to Angular build directory
-var distDir = __dirname + "/../dist/";
+var distDir = __dirname + "/client/dist/";
 console.log(distDir);
 app.use(express.static(distDir));
 
 app.use('/api/v1', api);
 
 // Initialize the app.
-var server = app.listen(process.env.PORT || 3001, function () {
-  var port = server.address().port;
-  console.log("App now running on port", port);
-});
+// var server = app.listen(process.env.PORT || 3001, function () {
+//   var port = server.address().port;
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
 module.exports = app;

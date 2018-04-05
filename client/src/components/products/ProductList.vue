@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div class="products">
+    <div class="products pt-5">
       <div class="container">
-        <template v-for="product in products">
-          <product-item :product="product" v-bind:key="product.id" ></product-item>
-        </template>
+        <div class="row">
+          <template v-for="product in products">
+            <product-item :product="product" v-bind:key="product.id" ></product-item>
+          </template>
+         </div>
       </div>
     </div>
   </div>
